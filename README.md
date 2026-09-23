@@ -482,4 +482,4 @@ The current implementation establishes the core application architecture, securi
 
 ## License
 
-License information will be added as the project licensing decision is finalized.
+Sentinel is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
