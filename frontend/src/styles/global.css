@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: 10 10 10;
+  --color-surface: 17 17 17;
+  --color-surface-raised: 24 24 24;
+  --color-hairline: 38 38 38;
+  --color-text: 245 245 245;
+  --color-muted: 145 145 145;
+  --color-amber: 212 212 212;
+  --color-risk: 212 212 212;
+  --color-teal: 212 212 212;
+  --color-signal: 245 245 245;
+
+  --hex-hairline: #262626;
+  --hex-signal: #f5f5f5;
+  --hex-teal: #d4d4d4;
+  --hex-amber: #d4d4d4;
+  --hex-risk: #d4d4d4;
+}
+
+:root[data-theme="light"] {
+  --color-bg: 250 250 250;
+  --color-surface: 255 255 255;
+  --color-surface-raised: 245 245 245;
+  --color-hairline: 224 224 224;
+  --color-text: 18 18 18;
+  --color-muted: 110 110 110;
+  --color-amber: 64 64 64;
+  --color-risk: 64 64 64;
+  --color-teal: 64 64 64;
+  --color-signal: 18 18 18;
+
+  --hex-hairline: #e0e0e0;
+  --hex-signal: #121212;
+  --hex-teal: #404040;
+  --hex-amber: #404040;
+  --hex-risk: #404040;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 1px solid rgb(var(--color-text));
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgb(var(--color-text));
+  color: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-hairline));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-muted));
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-sweep {
+  animation: sweep 2.2s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
